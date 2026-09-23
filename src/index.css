@@ -1,0 +1,307 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-messy-pink: #E8A5B8;
+    --color-messy-pink-hover: #D47A95;
+    --color-messy-dusty: #B76E79;
+    --color-messy-cream: #FAF7F2;
+    --color-messy-cream-warm: #F4ECE1;
+    --color-messy-ivory: #FFFDF9;
+    --color-messy-charcoal: #1E1E22;
+    --color-messy-charcoal-deep: #141416;
+    --color-messy-sage: #98A892;
+    --color-messy-gold: #C5A059;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #221F20;
+    background-color: #FAF7F2;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-script {
+    font-family: 'Pinyon Script', cursive;
+  }
+}
+
+/* Glassmorphism for sticky header */
+.glass-messy-nav {
+  background: rgba(250, 247, 242, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232, 165, 184, 0.25);
+  box-shadow: 0 4px 20px -2px rgba(183, 110, 121, 0.06);
+}
+
+.glass-messy-nav-dark {
+  background: rgba(20, 20, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(232, 165, 184, 0.15);
+}
+
+/* 3D Realistic Book Perspective Container */
+.menu-book-perspective {
+  perspective: 2500px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.menu-book-hardcover {
+  box-shadow: 
+    0 25px 50px -12px rgba(30, 25, 27, 0.25),
+    0 0 0 1px rgba(183, 110, 121, 0.15),
+    -10px 0 20px -5px rgba(0, 0, 0, 0.1),
+    10px 0 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.menu-book-gutter {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.04) 20%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(0, 0, 0, 0.04) 80%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+}
+
+.menu-page-shadow-left {
+  box-shadow: inset -15px 0 20px -10px rgba(70, 40, 50, 0.08);
+}
+
+.menu-page-shadow-right {
+  box-shadow: inset 15px 0 20px -10px rgba(70, 40, 50, 0.08);
+}
+
+/* Paper texture subtle overlay */
+.paper-texture {
+  background-image: radial-gradient(#B76E79 0.4px, transparent 0.4px);
+  background-size: 16px 16px;
+  opacity: 0.12;
+}
+
+/* Subtle steam animation for coffee */
+@keyframes steamRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scaleX(0.8) rotate(0deg);
+  }
+  40% {
+    opacity: 0.65;
+    transform: translateY(-12px) scaleX(1.1) rotate(-2deg);
+  }
+  70% {
+    opacity: 0.4;
+    transform: translateY(-24px) scaleX(1.3) rotate(3deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-38px) scaleX(1.6) rotate(-1deg);
+  }
+}
+
+.animate-steam-1 {
+  animation: steamRise 3.6s ease-in-out infinite;
+}
+.animate-steam-2 {
+  animation: steamRise 4.2s ease-in-out 1.2s infinite;
+}
+.animate-steam-3 {
+  animation: steamRise 3.9s ease-in-out 2.1s infinite;
+}
+
+/* Floating floral elements */
+@keyframes petalDrift {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(6deg);
+  }
+}
+
+.animate-petal-drift {
+  animation: petalDrift 7s ease-in-out infinite;
+}
+
+@keyframes petalDriftReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-8deg);
+  }
+}
+
+.animate-petal-drift-rev {
+  animation: petalDriftReverse 8.5s ease-in-out 1s infinite;
+}
+
+/* Ken Burns effect */
+@keyframes kenBurnsSlow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-ken-burns {
+  animation: kenBurnsSlow 26s ease-in-out infinite;
+}
+
+/* Realistic 3D Page Turn Animation with Multi-phase Lighting */
+@keyframes pageCurlNext {
+  0% {
+    transform: perspective(2500px) rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    filter: brightness(1);
+  }
+  30% {
+    transform: perspective(2500px) rotateY(-22deg) skewY(-1.8deg) scale(0.97);
+    box-shadow: -22px 20px 45px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.04);
+  }
+  65% {
+    transform: perspective(2500px) rotateY(-8deg) skewY(-0.6deg) scale(0.99);
+    box-shadow: -10px 14px 28px rgba(0, 0, 0, 0.12);
+    filter: brightness(0.98);
+  }
+  100% {
+    transform: perspective(2500px) rotateY(0deg) skewY(0deg) scale(1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    filter: brightness(1);
+  }
+}
+
+@keyframes pageCurlPrev {
+  0% {
+    transform: perspective(2500px) rotateY(0deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    filter: brightness(1);
+  }
+  30% {
+    transform: perspective(2500px) rotateY(22deg) skewY(1.8deg) scale(0.97);
+    box-shadow: 22px 20px 45px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.04);
+  }
+  65% {
+    transform: perspective(2500px) rotateY(8deg) skewY(0.6deg) scale(0.99);
+    box-shadow: 10px 14px 28px rgba(0, 0, 0, 0.12);
+    filter: brightness(0.98);
+  }
+  100% {
+    transform: perspective(2500px) rotateY(0deg) skewY(0deg) scale(1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    filter: brightness(1);
+  }
+}
+
+/* Page Light Sheen Sweep Effect */
+@keyframes lightSweepNext {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes lightSweepPrev {
+  0% {
+    transform: translateX(100%) skewX(20deg);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateX(-200%) skewX(20deg);
+    opacity: 0;
+  }
+}
+
+.animate-page-sweep-next {
+  animation: lightSweepNext 0.75s ease-out forwards;
+}
+
+.animate-page-sweep-prev {
+  animation: lightSweepPrev 0.75s ease-out forwards;
+}
+
+/* Gold foil shimmer */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-foil-text {
+  background: linear-gradient(
+    90deg,
+    #B76E79 0%,
+    #E8A5B8 25%,
+    #C5A059 50%,
+    #E8A5B8 75%,
+    #B76E79 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: goldShimmer 6s linear infinite;
+}
+
+/* Custom scrollbar in soft dusty rose */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8A5B8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B76E79;
+}
